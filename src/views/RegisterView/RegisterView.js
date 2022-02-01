@@ -20,7 +20,7 @@ const RegisterView = () => {
 
     const handleSubmit = evt => {
         evt.preventDefault();
-        dispatch(authOperations.register(user));
+        // dispatch(authOperations.register(user));
         reset();
     };
 

@@ -1,8 +1,12 @@
 
-import { lazy, Suspense } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { Redirect, Switch } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { authOperations, authSelectors } from 'redux/auth';
+import PrivateRoute from 'components/PrivateRouter';
+import PublicRoute from 'components/PublicRoute';
 import AppBar from 'components/AppBar';
 
 const HomePage = lazy(() =>
@@ -22,16 +26,36 @@ const ContactsPage = lazy(() =>
 
 
 const App = () => {
+  const dispatch = useDispatch();
+  const isRefreshUser = useSelector(authSelectors.getIsRefreshUser);
+  console.log(isRefreshUser);
+
+  useEffect(() => {
+    dispatch(authOperations.refreshUser());
+  }, [dispatch]);
+
   return (
     <>
       <AppBar />
       <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/register' component={RegisterPage} />
-            <Route path='/login' component={LoginPage} />
-            <Route path='/contacts' component={ContactsPage} />
+            <PublicRoute exact path='/'>
+              <HomePage />
+            </PublicRoute>
+
+            <PublicRoute exact path='/register' restricted>
+              <RegisterPage />
+            </PublicRoute>
+
+            <PublicRoute exact path='/login' restricted redirectTo='/contacts'>
+              <LoginPage />
+            </PublicRoute>
+
+            <PrivateRoute path='/contacts'>
+              <ContactsPage />
+            </PrivateRoute>
+
             <Redirect to="/" />
           </Switch>
         </Suspense>

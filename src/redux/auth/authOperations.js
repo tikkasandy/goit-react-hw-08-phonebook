@@ -13,21 +13,22 @@ const token = {
     },
 };
 
-const register = createAsyncThunk(
-    'auth/register',
-    async credentials => {
-        try {
-            console.log(credentials);
-            const { data } = await axios.post('/users/signup', credentials);
-            toast.success('You have successfully registered and logged in');
-            console.log(data);
-            token.set(data.token);
-            return data;
-        } catch (error) {
-            console.dir(error);
-            toast.error('Sorry, we can not register this user')
-        }
-    });
+// const register = createAsyncThunk(
+//     'auth/register',
+//     async credentials => {
+//         try {
+//             console.log(credentials);
+//             const { data } = await axios.post('/users/signup', credentials);
+//             toast.success('You have successfully registered and logged in');
+//             console.log(data);
+//             token.set(data.token);
+//             return data;
+//         } catch (error) {
+//             console.dir(error);
+//             toast.error('Sorry, we can not register this user')
+//         }
+//     }
+// );
 
 const logIn = createAsyncThunk(
     'auth/logIn',
@@ -44,7 +45,8 @@ const logIn = createAsyncThunk(
             console.dir(error);
             toast.error('Sorry, email or password is incorrect')
         }
-    });
+    }
+);
 
 const logOut = createAsyncThunk(
     'auth/logOut',
@@ -60,12 +62,38 @@ const logOut = createAsyncThunk(
             console.dir(error);
             toast.error('Please authenticate')
         }
-    });
+    }
+);
+
+const refreshUser = createAsyncThunk(
+    'auth/refresh',
+    async (_, thunkAPI) => {
+        console.log(thunkAPI.getState());
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+
+        if (persistedToken === null) {
+            console.log('No token');
+            return thunkAPI.rejectWithValue();
+        }
+
+        token.set(persistedToken)
+        try {
+            const { data } = await axios.get('/users/current');
+            return data;
+
+        } catch (error) {
+            console.dir(error);
+            toast.error('Token')
+        }
+    }
+);
 
 const authOperations = {
-    register,
+    // register,
     logIn,
-    logOut
+    logOut,
+    refreshUser
 };
 
 export default authOperations;
