@@ -1,13 +1,14 @@
 import { useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import { contactsOperations, contactsSelectors } from 'redux/contacts';
+import { authOperations } from 'redux/auth';
 import Section from 'components/Section';
 import Button from 'components/Button/Button';
 import s from './RegisterView.module.scss';
 
 const RegisterView = () => {
     // const contacts = useSelector(contactsSelectors.getContacts);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const [user, setUser] = useState({ name: '', email: '', password: '' });
 
@@ -19,15 +20,7 @@ const RegisterView = () => {
 
     const handleSubmit = evt => {
         evt.preventDefault();
-
-        // const isNotUnique = contacts.find(item => item.name === contact.name);
-
-        // if (isNotUnique) {
-        //     alert(`${contact.name} name is already in contacts`);
-        //     return;
-        // };
-
-        // dispatch(contactsOperations.addContact(contact));
+        dispatch(authOperations.register(user));
         reset();
     };
 
@@ -45,7 +38,7 @@ const RegisterView = () => {
                         onChange={handleChange}
                         value={user.name}
                         type="text"
-                        name="email"
+                        name="name"
                         required
                     />
                 </label>

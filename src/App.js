@@ -1,7 +1,9 @@
 
 import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Navbar from 'components/Navbar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AppBar from 'components/AppBar';
 
 const HomePage = lazy(() =>
   import('./views/HomeView' /* webpackChunkName: "home-page" */),
@@ -22,16 +24,19 @@ const ContactsPage = lazy(() =>
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/register' component={RegisterPage} />
-          <Route path='/login' component={LoginPage} />
-          <Route path='/contacts' component={ContactsPage} />
-          <Redirect to="/" />
-        </Switch>
-      </Suspense>
+      <AppBar />
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route path='/register' component={RegisterPage} />
+            <Route path='/login' component={LoginPage} />
+            <Route path='/contacts' component={ContactsPage} />
+            <Redirect to="/" />
+          </Switch>
+        </Suspense>
+      </main>
+      <ToastContainer />
     </>
   );
 };

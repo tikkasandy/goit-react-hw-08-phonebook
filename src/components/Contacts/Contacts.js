@@ -15,12 +15,12 @@ const Contacts = () => {
   return (
     <>
       <ul className={s.ContactsList}>
-        {contacts.map(({ id, name, phone }) => (
+        {contacts.map(({ id, name, number }) => (
           <li key={id} className={s.ContactsItem}>
             <ContactItem
               id={id}
               name={name}
-              phone={phone}
+              number={number}
             />
           </li>
         ))}

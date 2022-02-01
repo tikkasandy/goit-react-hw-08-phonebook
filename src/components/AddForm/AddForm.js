@@ -8,7 +8,7 @@ const AddForm = () => {
   const contacts = useSelector(contactsSelectors.getContacts);
   const dispatch = useDispatch();
 
-  const [contact, setContact] = useState({ name: '', phone: '' });
+  const [contact, setContact] = useState({ name: '', number: '' });
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -31,7 +31,7 @@ const AddForm = () => {
   };
 
   const reset = () => {
-    setContact({ name: '', phone: '' });
+    setContact({ name: '', number: '' });
   };
 
   return (
@@ -54,9 +54,9 @@ const AddForm = () => {
         <input
           className={s.Input}
           onChange={handleChange}
-          value={contact.phone}
+          value={contact.number}
           type="tel"
-          name="phone"
+          name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
