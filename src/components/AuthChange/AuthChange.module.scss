@@ -1,0 +1,42 @@
+@import '/src/styles/shared.scss'; 
+
+.Text {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.Link {
+    box-sizing: border-box;
+    min-width: 160px;
+    padding: 16px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: $secondary-text-color;
+    background-color: $secondary-button-color;
+    
+    border: 0;
+    border-radius: 6px;
+
+    transform: scale(1);
+
+    transition: all $transition-duration $timing-function;
+
+    &:hover {
+        background-color: $hover-secondary-button-color;
+    }
+
+    &:active {
+        background-color:$active-secondary-button-color;
+
+        transform: scale(0.98);
+    }  
+
+    &:disabled {
+        background-color: lightgrey;
+        cursor: auto;
+    }
+  }

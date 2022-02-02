@@ -1,22 +1,64 @@
+@import '/src/styles/shared.scss';
+
 .Form {
-  padding-left: 20px;
 }
 
 .Label {
   text-align: left;
   font-size: 20px;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .Input {
   margin-bottom: 20px;
-  padding: 5px 10px;
+  padding: 14px 16px;
   width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.5;
 
-  border-radius: 5px;
-  box-shadow: -5px -5px 5px -5px rgba(25, 118, 210, 0.6) inset;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+}
+
+.Button{
+  position: relative;
+  min-width: 60px;
+  height:60px;
+
+  color: $secondary-text-color;
+  background-color: $secondary-button-color;
+  
+  border: 0;
+  border-radius: 50%;
+
+  transform: scale(1);
+
+  transition: all $transition-duration $timing-function;
+
+  &:hover {
+        background-color: $hover-secondary-button-color;
+    }
+
+    &:active {
+       
+        background-color:$active-secondary-button-color;
+
+         transform: scale(0.98);
+    }  
+
+    &:disabled {
+        background-color: lightgrey;
+        cursor: auto;
+    }
+}
+
+.ButtonSvg {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 

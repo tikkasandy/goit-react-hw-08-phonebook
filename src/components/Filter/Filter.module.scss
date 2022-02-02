@@ -1,18 +1,19 @@
+@import '/src/styles/shared.scss';
 .Label {
   text-align: left;
   font-size: 20px;
   line-height: 1.5;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .Input {
   margin-bottom: 20px;
-  padding: 5px 10px;
+  padding: 14px 16px;
   width: 100%;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.5;
 
-  border-radius: 5px;
-  box-shadow: -5px -5px 5px -5px rgba(25, 118, 210, 0.6) inset;
+  border-radius: 6px;
+  border: 1px solid $border-color;
 }
 

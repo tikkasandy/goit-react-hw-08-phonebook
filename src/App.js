@@ -7,19 +7,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import { authOperations, authSelectors } from 'redux/auth';
 import PrivateRoute from 'components/PrivateRouter';
 import PublicRoute from 'components/PublicRoute';
+import Container from 'components/Container';
 import AppBar from 'components/AppBar';
 
-const HomePage = lazy(() =>
-  import('./views/HomeView' /* webpackChunkName: "home-page" */),
-);
 const LoginPage = lazy(() =>
   import(
     './views/LoginView' /* webpackChunkName: "login-page" */
   ),
 );
+
 const RegisterPage = lazy(() =>
   import('./views/RegisterView' /*webpackChunkName: "register-page" */),
 );
+
 const ContactsPage = lazy(() =>
   import('./views/ContactsView' /*webpackChunkName: "rcontacts-page" */),
 );
@@ -38,27 +38,29 @@ const App = () => {
     <>
       <AppBar />
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <PublicRoute exact path='/'>
-              <HomePage />
-            </PublicRoute>
+        <Container>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              {/* <PublicRoute exact path='/'>
+                <HomePage />
+              </PublicRoute> */}
 
-            <PublicRoute exact path='/register' restricted>
-              <RegisterPage />
-            </PublicRoute>
+              <PublicRoute exact path='/register' restricted>
+                <RegisterPage />
+              </PublicRoute>
 
-            <PublicRoute exact path='/login' restricted redirectTo='/contacts'>
-              <LoginPage />
-            </PublicRoute>
+              <PublicRoute exact path='/login' restricted redirectTo='/contacts'>
+                <LoginPage />
+              </PublicRoute>
 
-            <PrivateRoute path='/contacts'>
-              <ContactsPage />
-            </PrivateRoute>
+              <PrivateRoute path='/contacts'>
+                <ContactsPage />
+              </PrivateRoute>
 
-            <Redirect to="/" />
-          </Switch>
-        </Suspense>
+              <Redirect to="/login" />
+            </Switch>
+          </Suspense>
+        </Container>
       </main>
       <ToastContainer />
     </>

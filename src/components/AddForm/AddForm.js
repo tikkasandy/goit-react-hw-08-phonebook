@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
-import Button from 'components/Button/Button';
+import { MdAdd } from 'react-icons/md';
 import s from './AddForm.module.scss';
 
 const AddForm = () => {
@@ -62,7 +62,9 @@ const AddForm = () => {
           required
         ></input>
       </label>
-      <Button label="Add contact" type="submit" />
+      <button className={s.Button} type="submit">
+        <MdAdd className={s.ButtonSvg} />
+      </button>
     </form>
   );
 };

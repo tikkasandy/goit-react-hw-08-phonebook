@@ -1,13 +1,41 @@
-.Navbar {
+@import '/src/styles/shared.scss';
+
+.Header {
   z-index: 1100;
 
-  display: flex;
-  justify-content: space-between;
+  background-color: $active-color;
+  box-shadow:  $main-shadow;
+}
 
+.NavbarLeft {
+  justify-content: flex-start;
+  align-items: baseline;
+
+  display: flex;
   padding-right: 30px;
   padding-left: 30px;
 
-  color: #FFF;
-  background-color: #1976D2;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  color: $secondary-text-color;
+}
+
+.NavbarRight {
+  justify-content: flex-end;
+  align-items: baseline;
+
+  display: flex;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  color: $secondary-text-color;
+}
+
+.Title {
+ 
+  text-align: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+
+
+  font-size: 32px;
+  line-height: 1.5;
 }

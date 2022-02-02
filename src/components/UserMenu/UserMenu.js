@@ -1,23 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { authOperations, authSelectors } from 'redux/auth';
-// import { authSelectors, authOperations } from '../../redux/auth';
-// import defaultAvatar from './default-avatar.png';
+import { MdOutlineLogout } from 'react-icons/md';
 import s from './UserMenu.module.scss';
-
 
 const UserMenu = () => {
     const name = useSelector(authSelectors.getUserName)
     const dispatch = useDispatch();
-
+    const avatar = name.charAt(0);
 
     return (
-        // <></>
-        <div className={s.Container}>
-            {/* <img src={avatar} alt="" width="32" style={styles.avatar} /> */}
-            <span className={s.Item}>Hello, {name}</span>
+        <div className={s.User}>
+            <span className={s.Avatar}>{avatar}</span>
+            <span className={s.Name}>Hello, {name}</span>
             <button className={s.Button} type="button" onClick={() => dispatch(authOperations.logOut())}>
-                {/* <button className={s.Button} type="button"> */}
-                Log Out
+                <MdOutlineLogout className={s.ButtonSvg} />
             </button>
         </div>
     );

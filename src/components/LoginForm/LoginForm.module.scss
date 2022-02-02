@@ -1,0 +1,58 @@
+@import '/src/styles/shared.scss';
+
+.Form {
+}
+
+.Label {
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.Input {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  width: 100%;
+  font-size: 17px;
+  line-height: 1.5;
+
+  border-radius: 6px;
+  border: 1px solid $border-color;
+}
+
+.Button {
+    box-sizing: border-box;
+    min-width: 80px;
+    width: 100%;
+    padding: 16px;
+
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    color: $secondary-text-color;
+    background-color: $button-color;
+    
+    border: 0;
+    border-radius: 6px;
+
+    transform: scale(1);
+
+    transition: all $transition-duration $timing-function;
+
+    &:hover {
+        background-color: $hover-button-color;
+    }
+
+    &:active {
+        background-color:$active-button-color;
+
+        transform: scale(0.98);
+    }  
+
+    &:disabled {
+        background-color: lightgrey;
+        cursor: auto;
+    }
+}

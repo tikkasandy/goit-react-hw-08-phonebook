@@ -1,22 +1,30 @@
+@import '/src/styles/shared.scss';
+
 .ContactsList {
   text-align: left;
 }
 
 .ContactsItem {
     display: flex;
-    padding: 10px;;
+    padding: 10px;
+    // white-space:normal;
+    // overflow-wrap: break-word;
+    word-break: break-all;
 
     align-items: center;
-    height: 60px;
+    min-height: 60px;
     justify-content: space-between;
 
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid transparent;
 
-    transition: all cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+    transition: all $transition-duration $timing-function;;
 
     &:hover {
-      border: 1px solid #1976d2;
-      color: #1976d2
+      border: 1px solid $secondary-button-color;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
 }

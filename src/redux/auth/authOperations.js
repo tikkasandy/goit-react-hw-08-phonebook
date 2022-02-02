@@ -13,22 +13,22 @@ const token = {
     },
 };
 
-// const register = createAsyncThunk(
-//     'auth/register',
-//     async credentials => {
-//         try {
-//             console.log(credentials);
-//             const { data } = await axios.post('/users/signup', credentials);
-//             toast.success('You have successfully registered and logged in');
-//             console.log(data);
-//             token.set(data.token);
-//             return data;
-//         } catch (error) {
-//             console.dir(error);
-//             toast.error('Sorry, we can not register this user')
-//         }
-//     }
-// );
+const register = createAsyncThunk(
+    'auth/register',
+    async credentials => {
+        try {
+            console.log(credentials);
+            const { data } = await axios.post('/users/signup', credentials);
+            toast.success('You have successfully registered and logged in');
+            console.log(data);
+            token.set(data.token);
+            return data;
+        } catch (error) {
+            console.dir(error);
+            toast.error('Sorry, we can not register this user')
+        }
+    }
+);
 
 const logIn = createAsyncThunk(
     'auth/logIn',
@@ -90,7 +90,7 @@ const refreshUser = createAsyncThunk(
 );
 
 const authOperations = {
-    // register,
+    register,
     logIn,
     logOut,
     refreshUser
