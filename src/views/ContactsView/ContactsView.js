@@ -5,7 +5,7 @@ import Section from 'components/Section';
 
 const ContactsView = () => (
     <>
-        <Section title="Phonebook">
+        <Section title="Add contact">
             <AddForm />
         </Section>
         <Section title="Contacts">

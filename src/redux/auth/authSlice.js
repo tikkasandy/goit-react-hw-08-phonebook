@@ -23,6 +23,7 @@ const authSlice = createSlice({
             state.isLoggedIn = true;
         },
         [authOperations.logOut.fulfilled](state) {
+            console.log(state);
             state.user = { name: null, email: null };
             state.token = null;
             state.isLoggedIn = false;

@@ -10,7 +10,6 @@ import {
     REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import logger from 'redux-logger';
 import { contactsReducer } from './contacts';
 import { authReducer } from './auth';
 
@@ -30,8 +29,7 @@ const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }),
-        logger],
+        })],
     devTools: process.env.NODE_ENV === 'development',
 })
 

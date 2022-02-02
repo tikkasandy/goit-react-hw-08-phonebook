@@ -9,13 +9,10 @@ const AppBar = () => {
     return (
         <header className={s.Header}>
             <Container>
-                {isLoggedIn
-                    ? <div className={s.NavbarRight}>
-                        <UserMenu />
-                    </div>
-                    : <div className={s.NavbarLeft}>
-                        <h1 className={s.Title}>Phonebook</h1>
-                    </div>}
+                <div className={s.Navbar}>
+                    <h1 className={s.Title}>Phonebook</h1>
+                    {isLoggedIn && < UserMenu />}
+                </div>
             </Container>
         </header>
     );

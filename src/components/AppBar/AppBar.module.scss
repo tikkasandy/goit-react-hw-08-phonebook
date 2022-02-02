@@ -3,30 +3,19 @@
 .Header {
   z-index: 1100;
 
-  background-color: $active-color;
+  background-color: $section-color;
   box-shadow:  $main-shadow;
 }
 
-.NavbarLeft {
-  justify-content: flex-start;
+.Navbar {
+  justify-content: space-between;
   align-items: baseline;
 
   display: flex;
   padding-right: 30px;
   padding-left: 30px;
 
-  color: $secondary-text-color;
-}
-
-.NavbarRight {
-  justify-content: flex-end;
-  align-items: baseline;
-
-  display: flex;
-  padding-right: 30px;
-  padding-left: 30px;
-
-  color: $secondary-text-color;
+  color: $active-color;
 }
 
 .Title {

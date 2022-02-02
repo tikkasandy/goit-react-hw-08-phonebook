@@ -9,6 +9,8 @@ import PrivateRoute from 'components/PrivateRouter';
 import PublicRoute from 'components/PublicRoute';
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
+// import Footer from 'components/Footer/Footer';
+import CustomLoader from 'components/CustomLoader';
 
 const LoginPage = lazy(() =>
   import(
@@ -28,7 +30,6 @@ const ContactsPage = lazy(() =>
 const App = () => {
   const dispatch = useDispatch();
   const isRefreshUser = useSelector(authSelectors.getIsRefreshUser);
-  console.log(isRefreshUser);
 
   useEffect(() => {
     dispatch(authOperations.refreshUser());
@@ -36,32 +37,36 @@ const App = () => {
 
   return (
     <>
-      <AppBar />
-      <main>
-        <Container>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Switch>
-              {/* <PublicRoute exact path='/'>
-                <HomePage />
-              </PublicRoute> */}
 
-              <PublicRoute exact path='/register' restricted>
-                <RegisterPage />
-              </PublicRoute>
+      {!isRefreshUser && (<>
+        <AppBar />
+        <main>
+          <Container>
+            <Suspense fallback={<CustomLoader />}>
 
-              <PublicRoute exact path='/login' restricted redirectTo='/contacts'>
-                <LoginPage />
-              </PublicRoute>
+              <Switch>
 
-              <PrivateRoute path='/contacts'>
-                <ContactsPage />
-              </PrivateRoute>
+                <PublicRoute exact path='/register' restricted>
+                  <RegisterPage />
+                </PublicRoute>
 
-              <Redirect to="/login" />
-            </Switch>
-          </Suspense>
-        </Container>
-      </main>
+                <PublicRoute exact path='/login' restricted redirectTo='/contacts'>
+                  <LoginPage />
+                </PublicRoute>
+
+                <PrivateRoute path='/contacts'>
+                  <ContactsPage />
+                </PrivateRoute>
+
+                <Redirect to="/login" />
+              </Switch>
+
+            </Suspense>
+          </Container>
+        </main>
+      </>
+      )}
+      {/* <Footer /> */}
       <ToastContainer />
     </>
   );
