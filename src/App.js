@@ -9,7 +9,7 @@ import PrivateRoute from 'components/PrivateRouter';
 import PublicRoute from 'components/PublicRoute';
 import Container from 'components/Container';
 import AppBar from 'components/AppBar';
-// import Footer from 'components/Footer/Footer';
+import Footer from 'components/Footer/Footer';
 import CustomLoader from 'components/CustomLoader';
 
 const LoginPage = lazy(() =>
@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <>
-
+      {/* <main><p>Content</p></main> */}
       {!isRefreshUser && (<>
         <AppBar />
         <main>
@@ -66,7 +66,7 @@ const App = () => {
         </main>
       </>
       )}
-      {/* <Footer /> */}
+      <Footer />
       <ToastContainer />
     </>
   );

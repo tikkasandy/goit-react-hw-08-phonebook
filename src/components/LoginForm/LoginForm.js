@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from 'redux/auth';
+import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
 import Section from 'components/Section';
 import s from './LoginForm.module.scss';
 
@@ -8,6 +9,7 @@ const LoginForm = () => {
     const dispatch = useDispatch();
 
     const [user, setUser] = useState({ email: '', password: '' });
+    const [passwordShown, setPasswordShown] = useState(false);
 
     const handleChange = ({ target }) => {
         const { name, value } = target;
@@ -26,8 +28,12 @@ const LoginForm = () => {
         setUser({ email: '', password: '' });
     };
 
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown);
+    };
+
     return (
-        <Section title='Login'>
+        <Section title='Log Into Phonebook'>
             <form className={s.Form} onSubmit={handleSubmit}>
                 <label className={s.Label}>
                     {/* <p>Email</p> */}
@@ -38,6 +44,7 @@ const LoginForm = () => {
                         type="email"
                         name="email"
                         placeholder="Email"
+                        autoFocus
                         required
                     />
                 </label>
@@ -47,13 +54,24 @@ const LoginForm = () => {
                         className={s.Input}
                         onChange={handleChange}
                         value={user.password}
-                        type="password"
+                        type={passwordShown ? "text" : "password"}
                         name="password"
                         placeholder="Password"
                         required
-                    ></input>
+                    >
+                    </input>
+                    <button
+                        className={s.ShowButton}
+                        onClick={togglePassword}
+                        type="button"
+                        title={passwordShown ? "Hide password" : "Show password"}
+                        arial-label={passwordShown ? "Hide password" : "Show password"}>
+                        {passwordShown
+                            ? <MdOutlineVisibility className={s.ShowSvg} />
+                            : <MdOutlineVisibilityOff className={s.ShowSvg} />}
+                    </button>
                 </label>
-                <button className={s.Button} type="submit" >Log In</button>
+                <button className={s.Button} type="submit">Log In</button>
             </form>
         </Section>
 

@@ -1,6 +1,9 @@
 @import '/src/styles/shared.scss';
 
 .Header {
+  top: 0;
+  left: 0;
+  position: sticky;
   z-index: 1100;
 
   background-color: $section-color;
@@ -9,7 +12,7 @@
 
 .Navbar {
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
   display: flex;
   padding-right: 30px;

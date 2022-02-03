@@ -3,7 +3,7 @@ import s from './Section.module.scss';
 
 const Section = ({ title, children }) => (
   <section className={s.Section}>
-    <h2 className={s.Title}>{title}</h2>
+    {title && <h2 className={s.Title}>{title}</h2>}
     {children}
   </section>
 );
