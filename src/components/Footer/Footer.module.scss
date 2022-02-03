@@ -1,6 +1,7 @@
 @import '/src/styles/shared.scss';
 
 .Footer {
+    z-index: 3;
     flex-grow: 0;
     padding: 20px 30px;
 

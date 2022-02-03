@@ -4,23 +4,58 @@
 }
 
 .Label {
+  
+
   display: block;
   position: relative;
    margin-bottom: 20px;
   text-align: left;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.5;
   font-weight: 700;
 }
 
-.Input {
-  padding: 14px 60px 14px 16px;
+.Input, 
+.InputPassword {
   width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+
   font-size: 17px;
   line-height: 1.5;
 
   border-radius: 6px;
   border: 1px solid $border-color;
+
+  &:focus+.Placeholder,
+  &:not(:placeholder-shown)+.Placeholder {
+    font-size: 12px;
+    top:10px;
+    // color: red;
+  }
+}
+
+.Placeholder {
+position: absolute;
+top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: $placeholder-text-color;
+
+  transition: all $transition-duration $timing-function;
+}
+
+.Input {
+  padding-right: 16px;
+}
+ 
+.InputPassword {
+  padding-right: 56px;
 }
 
 .ShowButton{
@@ -46,13 +81,8 @@ color:$primary-text;
       // color: $secondary-button-color;
         background-color:$active-small-button-color;
 
-        transform: translate(0, -50%) scale(0.98);
+        transform: translate(0, -50%) scale(0.95);
     }  
-
-    &:disabled {
-        background-color: lightgrey;
-        cursor: auto;
-    }
 }
 
 .ShowSvg {

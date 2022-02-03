@@ -21,7 +21,7 @@ const LoginForm = () => {
         evt.preventDefault();
         dispatch(authOperations.logIn(user));
 
-        reset();
+        // reset();
     };
 
     const reset = () => {
@@ -36,30 +36,33 @@ const LoginForm = () => {
         <Section title='Log Into Phonebook'>
             <form className={s.Form} onSubmit={handleSubmit}>
                 <label className={s.Label}>
-                    {/* <p>Email</p> */}
+
                     <input
                         className={s.Input}
                         onChange={handleChange}
                         value={user.email}
                         type="email"
                         name="email"
-                        placeholder="Email"
+                        // placeholder="Email"
+                        placeholder=" "
                         autoFocus
                         required
                     />
+                    <span className={s.Placeholder}>Email</span>
                 </label>
                 <label className={s.Label}>
-                    {/* <p>Password</p> */}
                     <input
-                        className={s.Input}
+                        className={s.InputPassword}
                         onChange={handleChange}
                         value={user.password}
                         type={passwordShown ? "text" : "password"}
                         name="password"
-                        placeholder="Password"
+                        // placeholder="Password"
+                        placeholder=" "
                         required
                     >
                     </input>
+                    <span className={s.Placeholder}>Password</span>
                     <button
                         className={s.ShowButton}
                         onClick={togglePassword}
