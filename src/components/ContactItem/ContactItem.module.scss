@@ -8,7 +8,7 @@ margin-right: 20px;
 }
 
 .Name {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 
   font-size: 20px;
   line-height: 1.5;
@@ -16,6 +16,54 @@ margin-right: 20px;
   text-transform: capitalize;
 
    color: $primary-text;
+}
+
+.C {
+  display: flex;
+    align-items: center;
+}
+
+.Call {
+  position: relative;
+  display: flex;
+  
+   margin-right: 10px;
+   width: 30px;
+  height: 30px;
+
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color: $secondary-button-color;
+background-color: transparent;
+  border-radius: 50%;
+
+  transform: scale(1);
+
+transition: all $transition-duration $timing-function;
+  &:hover {
+    background-color: $hover-small-button-color;
+    color: $hover-secondary-button-color
+  }
+
+   &:active {
+
+      color: $active-secondary-button-color;
+        background-color:$active-small-button-color;
+
+        transform: scale(0.95);
+    }  
+}
+
+.CallSvg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
 }
 
 .Number {
