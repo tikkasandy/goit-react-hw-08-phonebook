@@ -4,11 +4,11 @@
 }
 
 .Label {
-  
-
-  display: block;
   position: relative;
-   margin-bottom: 20px;
+  
+  display: block;
+  margin-bottom: 20px;
+   
   text-align: left;
   font-size: 17px;
   line-height: 1.5;
@@ -30,24 +30,9 @@
 
   &:focus+.Placeholder,
   &:not(:placeholder-shown)+.Placeholder {
-    font-size: 12px;
     top:10px;
-    // color: red;
+    font-size: 12px;
   }
-}
-
-.Placeholder {
-position: absolute;
-top: 50%;
-  left: 16px;
-  transform: translate(0, -50%);
-
-  font-size: 17px;
-  font-weight: 500;
-
-  color: $placeholder-text-color;
-
-  transition: all $transition-duration $timing-function;
 }
 
 .Input {
@@ -58,39 +43,60 @@ top: 50%;
   padding-right: 56px;
 }
 
+.Placeholder {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  color: $placeholder-text-color;
+
+  transform: translate(0, -50%);
+
+  transition: all $transition-duration $timing-function;
+}
+
 .ShowButton{
   position: absolute;
-  width: 36px;
-  height: 36px;
-background-color: transparent;
-  border: 0;
-  border-radius: 50%;
-color:$primary-text;
   top: 50%;
   right: 10px;
+  
+  width: 36px;
+  height: 36px;
+  
+  color:$svg-color;
+  background-color: transparent;
+  
+  border: 0;
+  border-radius: 50%;
+
   transform: translate(0, -50%) scale(1);
 
   transition: all $transition-duration $timing-function;
 
-    &:hover {
-        background-color: $hover-small-button-color;
+    &:hover,
+    &:focus {
+      color: $svg-hover-color;
+      background-color: $hover-small-button-color;
     }
 
     &:active {
-
-      // color: $secondary-button-color;
-        background-color:$active-small-button-color;
-
-        transform: translate(0, -50%) scale(0.95);
+      background-color:$active-small-button-color;
+      
+      transform: translate(0, -50%) scale(0.95);
     }  
 }
 
 .ShowSvg {
   position: absolute;
-  width: 24px;
-  height: 24px;
   top: 50%;
   left: 50%;
+
+  width: 24px;
+  height: 24px;
+  
   transform: translate(-50%, -50%);
 }
 
@@ -114,7 +120,8 @@ color:$primary-text;
 
     transition: all $transition-duration $timing-function;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $hover-button-color;
     }
 

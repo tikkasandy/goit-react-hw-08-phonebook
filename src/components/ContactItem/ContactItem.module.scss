@@ -15,7 +15,7 @@ margin-right: 20px;
   font-weight: 500;
   text-transform: capitalize;
 
-   color: $primary-text;
+   color: $primary-text-color;
 }
 
 .C {
@@ -42,7 +42,8 @@ background-color: transparent;
   transform: scale(1);
 
 transition: all $transition-duration $timing-function;
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $hover-small-button-color;
     color: $hover-secondary-button-color
   }
@@ -71,7 +72,7 @@ transition: all $transition-duration $timing-function;
   line-height: 1.5;
   font-weight: 500;
 
-  color: $primary-text;
+  color: $primary-text-color;
 }
 
 .Button{
@@ -79,8 +80,9 @@ transition: all $transition-duration $timing-function;
   min-width: 40px;
   height:40px;
 
-  color: $primary-text;
-  background-color: $disabled-button-color;
+  color: $svg-color;
+  background-color: transparent;
+  // background-color: $disabled-button-color;
   
   border: 0;
   border-radius: 50%;
@@ -89,7 +91,8 @@ transition: all $transition-duration $timing-function;
 
   transition: all $transition-duration $timing-function;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $secondary-text-color;
         background-color: $alarm-color;
     }

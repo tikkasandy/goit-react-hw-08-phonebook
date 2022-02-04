@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { contactsOperations } from "redux/contacts";
-import { MdOutlineDelete, MdOutlineLocalPhone } from 'react-icons/md';
+import { MdOutlineDelete, MdOutlineModeEdit, MdOutlineLocalPhone } from 'react-icons/md';
 import PropTypes from 'prop-types';
 import s from './ContactItem.module.scss';
 
@@ -24,9 +24,14 @@ const ContactItem = ({ id, name, number }) => {
           <span className={s.Number}>{number}</span>
         </div>
       </div>
-      <button className={s.Button} type="button" onClick={onDeleteContact}>
-        <MdOutlineDelete className={s.ButtonSvg} />
-      </button>
+      <div>
+        <button className={s.Button} type="button" onClick={onDeleteContact}>
+          <MdOutlineModeEdit className={s.ButtonSvg} />
+        </button>
+        <button className={s.Button} type="button" onClick={onDeleteContact}>
+          <MdOutlineDelete className={s.ButtonSvg} />
+        </button>
+      </div>
     </>
   );
 }

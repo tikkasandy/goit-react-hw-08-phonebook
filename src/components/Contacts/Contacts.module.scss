@@ -20,8 +20,9 @@
 
     transition: all $transition-duration $timing-function;;
 
-    &:hover {
-      border: 1px solid $secondary-button-color;
+    &:hover,
+    &:focus {
+      border: 1px solid $button-color;
     }
 
     &:not(:last-child) {

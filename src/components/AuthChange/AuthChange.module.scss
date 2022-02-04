@@ -25,7 +25,8 @@
 
     transition: all $transition-duration $timing-function;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $hover-secondary-button-color;
     }
 

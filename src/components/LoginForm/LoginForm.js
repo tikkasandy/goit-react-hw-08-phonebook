@@ -36,15 +36,14 @@ const LoginForm = () => {
         <Section title='Log Into Phonebook'>
             <form className={s.Form} onSubmit={handleSubmit}>
                 <label className={s.Label}>
-
                     <input
                         className={s.Input}
                         onChange={handleChange}
                         value={user.email}
                         type="email"
                         name="email"
-                        // placeholder="Email"
                         placeholder=" "
+                        aria-label='Email'
                         autoFocus
                         required
                     />
@@ -57,8 +56,8 @@ const LoginForm = () => {
                         value={user.password}
                         type={passwordShown ? "text" : "password"}
                         name="password"
-                        // placeholder="Password"
                         placeholder=" "
+                        aria-label='Password'
                         required
                     >
                     </input>
@@ -74,7 +73,12 @@ const LoginForm = () => {
                             : <MdOutlineVisibilityOff className={s.ShowSvg} />}
                     </button>
                 </label>
-                <button className={s.Button} type="submit">Log In</button>
+                <button
+                    className={s.Button}
+                    type="submit"
+                    aria-label='Log in'>
+                    Log In
+                </button>
             </form>
         </Section>
 

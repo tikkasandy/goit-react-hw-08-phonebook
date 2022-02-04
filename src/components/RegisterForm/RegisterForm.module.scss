@@ -4,28 +4,95 @@
 }
 
 .Label {
+  
+
+  display: block;
+  position: relative;
+   margin-bottom: 20px;
   text-align: left;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.5;
   font-weight: 700;
 }
 
-.Input {
-  margin-bottom: 20px;
-  padding: 14px 16px;
+.Input, 
+.InputPassword {
   width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 16px;
+
   font-size: 17px;
   line-height: 1.5;
 
   border-radius: 6px;
   border: 1px solid $border-color;
+
+  &:focus+.Placeholder,
+  &:not(:placeholder-shown)+.Placeholder {
+    font-size: 12px;
+    top:10px;
+    // color: red;
+  }
 }
 
-.Agreement {
-  margin-bottom: 20px;
-  text-align: left;
+.Placeholder {
+position: absolute;
+top: 50%;
+  left: 16px;
+  transform: translate(0, -50%);
 
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: 500;
+
+  color: $placeholder-text-color;
+
+  transition: all $transition-duration $timing-function;
+}
+
+.Input {
+  padding-right: 16px;
+}
+ 
+.InputPassword {
+  padding-right: 56px;
+}
+
+.ShowButton{
+  position: absolute;
+  width: 36px;
+  height: 36px;
+background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+color:$primary-text-color;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%) scale(1);
+
+  transition: all $transition-duration $timing-function;
+
+    &:hover,
+    &:focus {
+        background-color: $hover-small-button-color;
+    }
+
+    &:active {
+
+      // color: $secondary-button-color;
+        background-color:$active-small-button-color;
+
+        transform: translate(0, -50%) scale(0.95);
+    }  
+}
+
+.ShowSvg {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .Button {
@@ -48,7 +115,8 @@
 
     transition: all $transition-duration $timing-function;
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: $hover-button-color;
     }
 
@@ -59,7 +127,16 @@
     }  
 
     &:disabled {
-        background-color: $disabled-button-color;
+        background-color: lightgrey;
         cursor: auto;
     }
 }
+
+
+.Agreement {
+  margin-bottom: 20px;
+  text-align: left;
+
+  font-size: 12px;
+}
+
