@@ -16,8 +16,8 @@ const ContactItem = ({ id, name, number }) => {
         <span className={s.Name}>
           {name}
         </span>
-        <div className={s.C}>
-          <a href={`tel:${number}`} className={s.Call}>
+        <div className={s.Call}>
+          <a href={`tel:${number}`} className={s.CallNumber}>
             <MdOutlineLocalPhone className={s.CallSvg} />
 
           </a>
@@ -25,9 +25,9 @@ const ContactItem = ({ id, name, number }) => {
         </div>
       </div>
       <div>
-        <button className={s.Button} type="button" onClick={onDeleteContact}>
+        {/* <button className={s.Button} type="button" onClick={onDeleteContact}>
           <MdOutlineModeEdit className={s.ButtonSvg} />
-        </button>
+        </button> */}
         <button className={s.Button} type="button" onClick={onDeleteContact}>
           <MdOutlineDelete className={s.ButtonSvg} />
         </button>

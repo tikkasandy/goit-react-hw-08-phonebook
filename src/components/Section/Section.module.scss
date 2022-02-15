@@ -2,7 +2,7 @@
 
 .Section {
   margin: 20px auto;
-  padding: 30px 30px;
+  padding: 10px 10px;
 
   text-align: center;
 
@@ -11,6 +11,10 @@
   border-radius: 8px;
 
   box-shadow: $main-shadow;
+
+  @media screen and (min-width: $tablet) {
+    padding: 30px 30px;
+  }
 }
 
 .Title {

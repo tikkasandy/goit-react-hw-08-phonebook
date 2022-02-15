@@ -37,7 +37,10 @@ const authSlice = createSlice({
             state.isRefreshUser = false;
         },
         [authOperations.refreshUser.rejected](state) {
+            state.isLoggedIn = false;
             state.isRefreshUser = false;
+            // state.isLoggedIn = false;
+            state.token = null;
         },
     }
 });

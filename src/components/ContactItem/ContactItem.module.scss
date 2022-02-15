@@ -3,31 +3,30 @@
 .Contact {
 display: flex;
 flex-direction: column;
+width: 100%;
 
 margin-right: 20px;
 }
 
 .Name {
-  // margin-bottom: 10px;
-
   font-size: 20px;
   line-height: 1.5;
   font-weight: 500;
   text-transform: capitalize;
 
-   color: $primary-text-color;
+  color: $primary-text-color;
 }
 
-.C {
+.Call {
   display: flex;
     align-items: center;
 }
 
-.Call {
+.CallNumber {
   position: relative;
   display: flex;
   
-   margin-right: 10px;
+   margin-right: 6px;
    width: 30px;
   height: 30px;
 
@@ -93,13 +92,13 @@ transition: all $transition-duration $timing-function;
 
   &:hover,
   &:focus {
-    color: $secondary-text-color;
-        background-color: $alarm-color;
+    color: $alarm-color;
+        background-color: $hover-small-button-color;
     }
 
     &:active {
-       color: $secondary-text-color;
-        background-color:$alarm-hover-color;
+       color: $alarm-hover-color;
+        background-color:$active-small-button-color;
 
          transform: scale(0.98);
     }  

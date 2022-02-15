@@ -62,13 +62,17 @@ const refreshUser = createAsyncThunk(
         }
 
         token.set(persistedToken)
-        try {
-            const { data } = await axios.get('/users/current');
-            return data;
+        // try {
+        // console.log(persistedToken);
+        const { data } = await axios.get('/users/current');
+        // console.log(data);
+        return data;
 
-        } catch (error) {
-            toast.error('Please authenticate')
-        }
+        // } catch (error) {
+        //     console.log("oops", error);
+        //     token.unset();
+        //     toast.error('Please authenticate')
+        // }
     }
 );
 

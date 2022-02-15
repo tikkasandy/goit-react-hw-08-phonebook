@@ -2,8 +2,9 @@
 
 .Menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    width: 100%;
 
     padding-top: 10px;
     padding-bottom: 10px;
@@ -19,7 +20,7 @@
 
     border-radius: 25px;
 
-    background-color: $disabled-button-color;
+    background-color: $hover-small-button-color;
 }
 
 .Avatar {
@@ -65,7 +66,7 @@
     text-transform: capitalize;
 
     color:$primary-text-color;
-    background-color: $disabled-button-color;
+    background-color: $hover-small-button-color;
     
     border: 0;
     border-radius: 50%;

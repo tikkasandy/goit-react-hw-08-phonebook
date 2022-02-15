@@ -1,8 +1,5 @@
 @import '/src/styles/shared.scss';
 
-.Form {
-}
-
 .Label {
   position: relative;
   
@@ -15,11 +12,11 @@
   font-weight: 700;
 }
 
-.Input, 
-.InputPassword {
+.Input {
   width: 100%;
   padding-top: 14px;
   padding-bottom: 14px;
+  padding-right: 16px;
   padding-left: 16px;
 
   font-size: 17px;
@@ -33,14 +30,6 @@
     top:10px;
     font-size: 12px;
   }
-}
-
-.Input {
-  padding-right: 16px;
-}
- 
-.InputPassword {
-  padding-right: 56px;
 }
 
 .Placeholder {
@@ -98,49 +87,5 @@
   height: 24px;
   
   transform: translate(-50%, -50%);
-}
-
-.Button {
-    box-sizing: border-box;
-    min-width: 80px;
-    width: 100%;
-    padding: 16px;
-
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: capitalize;
-
-    color: $secondary-text-color;
-    background-color: $button-color;
-    
-    border: 0;
-    border-radius: 6px;
-
-    transform: scale(1);
-
-    transition: all $transition-duration $timing-function;
-
-    &:hover,
-    &:focus {
-        background-color: $hover-button-color;
-    }
-
-    &:active {
-        background-color:$active-button-color;
-
-        transform: scale(0.98);
-    }  
-
-    &:disabled {
-        background-color: lightgrey;
-        cursor: auto;
-    }
-}
-
-.Agreement {
-  margin-bottom: 20px;
-  text-align: left;
-
-  font-size: 12px;
 }
 

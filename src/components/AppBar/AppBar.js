@@ -10,8 +10,8 @@ const AppBar = () => {
         <header className={s.Header}>
             <Container>
                 <div className={s.Navbar}>
-                    <h1 className={s.Title}>Phonebook</h1>
-                    {isLoggedIn && < UserMenu />}
+                    <h1 className={isLoggedIn ? s.TitleHidden : s.Title}>Phonebook</h1>
+                    {isLoggedIn && <UserMenu />}
                 </div>
             </Container>
         </header>
