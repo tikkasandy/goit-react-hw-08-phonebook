@@ -12,6 +12,7 @@ import AppBar from 'components/AppBar';
 import Footer from 'components/Footer/Footer';
 import CustomLoader from 'components/CustomLoader';
 
+
 const LoginPage = lazy(() =>
   import(
     './views/LoginView' /* webpackChunkName: "login-page" */
@@ -37,7 +38,6 @@ const App = () => {
 
   return (
     <>
-      {/* <main><p>Content</p></main> */}
       {!isRefreshUser && (<>
         <AppBar />
         <main>
