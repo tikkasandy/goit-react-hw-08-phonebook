@@ -1,0 +1,91 @@
+@import '/src/styles/shared.scss';
+
+.Form {
+  text-align: center;
+}
+
+.Title {
+  margin-bottom: 20px;
+  
+  font-size: 24px;
+
+  color: $primary-text-color;
+}
+
+.Message {
+    margin-bottom: 20px;
+    text-align: start;
+    
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.Name {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.Buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.Button {
+    padding: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+    
+    border: none;
+    border-radius: 6px;
+
+    transform: scale(1);
+}
+
+.CancelButton {
+    composes: Button;
+
+    color:$button-color;
+    background-color: $secondary-text-color;
+
+    transition: all $transition-duration $timing-function;
+
+    &:hover {
+        background-color: $small-button-hover-color;
+    }
+
+    &:active {
+        color: $button-active-color;
+        background-color: $small-button-active-color;
+
+        transform: scale(0.95);
+    }
+
+}
+
+.AgreeButton {
+    composes: Button;
+    
+    margin-left: 10px;
+    
+    color:$secondary-text-color;
+    background-color: $alarm-color;
+
+    transition: all $transition-duration $timing-function;
+
+    &:hover,
+    &:focus {
+         background-color: $alarm-hover-color;
+    }
+
+    &:active {
+        background-color: $alarm-hover-color;
+
+        transform: scale(0.95);
+    }
+
+    &:disabled {
+        background-color: $button-disabled-color;
+    }
+}

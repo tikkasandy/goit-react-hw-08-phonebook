@@ -79,11 +79,11 @@
     &:hover,
     &:focus {
       color: $svg-hover-color;
-      background-color: $hover-small-button-color;
+      background-color: $small-button-hover-color;
     }
 
     &:active {
-      background-color:$active-small-button-color;
+      background-color:$small-button-active-color;
       
       transform: translate(0, -50%) scale(0.95);
     }  
@@ -122,11 +122,11 @@
 
     &:hover,
     &:focus {
-        background-color: $hover-button-color;
+        background-color: $button-hover-color;
     }
 
     &:active {
-        background-color:$active-button-color;
+        background-color:$button-active-color;
 
         transform: scale(0.98);
     }  

@@ -61,13 +61,13 @@ color:$svg-color;
 
     &:hover,
     &:focus {
-        background-color: $hover-small-button-color;
+        background-color: $small-button-hover-color;
     }
 
     &:active {
 
       // color: $secondary-button-color;
-        background-color:$active-small-button-color;
+        background-color:$small-button-active-color;
 
         transform: translate(0, -50%) scale(0.95);
     }  

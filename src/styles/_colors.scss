@@ -2,25 +2,32 @@ $body-color: #f0f2f5;
 $active-color: #1877f2;
 $section-color:#ffffff;
 $alarm-color: #ff0000;
-$alarm-hover-color:#bd4a49;
+// $alarm-hover-color:#bd4a49;
+$alarm-hover-color:#df0334;
+$backdrop-color: rgba(0, 0, 0, 0.2);
 
+// text
 $primary-text-color:#050505;
 $secondary-text-color: #ffffff;
 $placeholder-text-color: #a9a9a9;
 
-$button-color: #1877f2;
-$hover-button-color: #166fe5;
-$active-button-color: #29487d;
+
+// buttons
+$button-color: $active-color;
+$button-hover-color: #166fe5;
+$button-active-color: #29487d;
+$button-disabled-color:#e4e6eb;
 
 $secondary-button-color: #42b72a;
-$hover-secondary-button-color: #36a420;
-$active-secondary-button-color: #2b9217;
+$secondary-button-hover-color: #36a420;
+$secondary-button-active-color: #2b9217;
 
-$hover-small-button-color: #e6e6e6;
-$active-small-button-color:#b3b3b3;
-$disabled-button-color:#e4e6eb;
+$small-button-hover-color: #e6e6e6;
+$small-button-active-color:#b3b3b3;
 
+//border
 $border-color: #dddfe2;
 
+//svg
 $svg-color: #5f6368;
 $svg-hover-color: #050505;

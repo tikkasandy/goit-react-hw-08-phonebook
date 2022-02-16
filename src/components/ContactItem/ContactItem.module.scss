@@ -43,14 +43,14 @@ background-color: transparent;
 transition: all $transition-duration $timing-function;
   &:hover,
   &:focus {
-    background-color: $hover-small-button-color;
-    color: $hover-secondary-button-color
+    background-color: $small-button-hover-color;
+    color: $secondary-button-hover-color
   }
 
    &:active {
 
-      color: $active-secondary-button-color;
-        background-color:$active-small-button-color;
+      color: $secondary-button-active-color;
+        background-color:$small-button-active-color;
 
         transform: scale(0.95);
     }  
@@ -93,12 +93,12 @@ transition: all $transition-duration $timing-function;
   &:hover,
   &:focus {
     color: $alarm-color;
-        background-color: $hover-small-button-color;
+        background-color: $small-button-hover-color;
     }
 
     &:active {
        color: $alarm-hover-color;
-        background-color:$active-small-button-color;
+        background-color:$small-button-active-color;
 
          transform: scale(0.98);
     }  

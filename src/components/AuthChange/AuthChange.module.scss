@@ -27,17 +27,12 @@
 
     &:hover,
     &:focus {
-        background-color: $hover-secondary-button-color;
+        background-color: $secondary-button-hover-color;
     }
 
     &:active {
-        background-color:$active-secondary-button-color;
+        background-color:$secondary-button-active-color;
 
         transform: scale(0.98);
     }  
-
-    &:disabled {
-        background-color: lightgrey;
-        cursor: auto;
-    }
   }
